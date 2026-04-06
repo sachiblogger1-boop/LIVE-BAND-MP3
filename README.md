@@ -1,1 +1,226 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIVE BAND MP3 - Download Station</title>
+
+<style>
+/* ===== GLOBAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+header {
+    background: linear-gradient(90deg, #06b6d4, #9333ea);
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+nav {
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #06b6d4;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.post {
+    background: #020617;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    border-color: #06b6d4;
+}
+
+.post h2 {
+    margin-top: 0;
+    color: #06b6d4;
+}
+
+.song-list {
+    margin-top: 10px;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.download-btn {
+    background: linear-gradient(90deg, #06b6d4, #9333ea);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+@media(max-width:600px) {
+    .song-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>LIVE BAND MP3</h1>
+<p>Live Show Download Station</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Nonstop</a>
+<a href="#">Live Shows</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+<input type="text" id="searchInput" class="search-box" placeholder="Search songs or shows...">
+
+<div id="postContainer">
+
+<!-- POST 1 -->
+<div class="post" data-title="Flashback Live Show">
+<h2>Flashback Live Show 2024</h2>
+
+<div class="song-list">
+
+<div class="song-item">
+<span>01 - Api Dennage Kathawa</span>
+<button class="download-btn" onclick="downloadSong()">Download</button>
+</div>
+
+<div class="song-item">
+<span>02 - Mage Sihinaya</span>
+<button class="download-btn" onclick="downloadSong()">Download</button>
+</div>
+
+<div class="song-item">
+<span>03 - Oba Mage</span>
+<button class="download-btn" onclick="downloadSong()">Download</button>
+</div>
+
+</div>
+</div>
+
+<!-- POST 2 -->
+<div class="post" data-title="Sahara Flash Nonstop">
+<h2>Sahara Flash Nonstop 2023</h2>
+
+<div class="song-list">
+
+<div class="song-item">
+<span>01 - Nonstop Part 1</span>
+<button class="download-btn" onclick="downloadSong()">Download</button>
+</div>
+
+<div class="song-item">
+<span>02 - Nonstop Part 2</span>
+<button class="download-btn" onclick="downloadSong()">Download</button>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>LIVE BAND MP3 © 2026</p>
+<p><strong>Site Owner:</strong> Your Name</p>
+<p>Music Download Website</p>
+</footer>
+
+<script>
+
+// SEARCH FUNCTION
+const searchInput = document.getElementById("searchInput");
+const posts = document.querySelectorAll(".post");
+
+searchInput.addEventListener("keyup", function() {
+
+let value = searchInput.value.toLowerCase();
+
+posts.forEach(post => {
+
+let title = post.getAttribute("data-title").toLowerCase();
+
+if (title.includes(value)) {
+post.style.display = "block";
+} else {
+post.style.display = "none";
+}
+
+});
+
+});
+
+// DOWNLOAD BUTTON
+function downloadSong() {
+alert("Download link connected later with real MP3 file");
+}
+
+</script>
+
+</body>
+</html>
