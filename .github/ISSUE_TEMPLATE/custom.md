@@ -1,5 +1,5 @@
 ---
-name: Custom issue template
+name: LIVE BAND MP3
 about: Describe this issue template's purpose here.
 title: ''
 labels: ''
